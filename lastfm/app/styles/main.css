@@ -1,0 +1,40 @@
+.center {
+  text-align: center; }
+
+#search {
+  font-size: 24px;
+  width: 100%; }
+
+.search-col {
+  padding: 20px 0; }
+
+.artist-results img {
+  vertical-align: middle;
+  margin-right: 5px; }
+
+.main-card {
+  font-size: 24px;
+  line-height: 32px;
+  border: 1px solid #ccc;
+  padding-top: 10px; }
+  .main-card .img {
+    width: 100%; }
+
+.top-albums {
+  margin: 0;
+  padding: 0;
+  font-size: 12px; }
+
+.artist-card, .album-card {
+  height: 200px; }
+  .artist-card .img-shell, .album-card .img-shell {
+    width: 126px;
+    height: 126px;
+    overflow: hidden;
+    background-color: #ccc;
+    margin: 0px auto; }
+
+.track {
+  font-size: 18px; }
+  .track .rank {
+    text-align: right; }

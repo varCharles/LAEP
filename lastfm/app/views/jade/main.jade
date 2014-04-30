@@ -1,0 +1,20 @@
+.sixteen.columns
+	h2 {{artist.name}}
+	.main-card.clearfix.add-bottom
+		.columns.img.center
+			img(ng-src="{{artist.image[4]['#text']}}")
+		.columns.bio.add-bottom	
+			div(ng-bind-html-unsafe="artist.bio.summary")
+		.top-albums.columns.add-bottom
+			h2 Top Albums
+			.album-card.columns.three.alpha.omega.center(ng-repeat="album in top_albums_result.album")
+				.img-shell	
+					img(ng-src="{{album.image[2]['#text']}}")
+				a(href='#/album/{{artist.name}}/{{album.name}}') {{album.name}}
+
+	row.artist-results.add-top
+		h3 Similar Artists
+		.artist-card.columns.three.alpha.omega.center(ng-repeat="artist in artist.similar.artist",ng-show="!$first")
+			.img-shell	
+				img(ng-src="{{artist.image[2]['#text']}}")
+			a.name(href="#/artist/{{artist.name}}"){{artist.name}}

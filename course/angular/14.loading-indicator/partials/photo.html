@@ -1,0 +1,23 @@
+<div class="menu">
+	<div class="container">
+		<button ng-click="setPhotoSize('small')">Small</button>
+		<button ng-click="setPhotoSize('medium')">Medium</button>
+		<button ng-click="setPhotoSize('large')">Large</button> 
+	</div>
+</div>
+<div class="pagebody container" >
+	<div class="add-bottom" ng-switch="photo_size">
+		<img ng-switch-when="small" ng-src="{{photo.small.source}}"  title="{{photoMeta.title._content}}" />
+		<img ng-switch-when="large" ng-src="{{photo.large.source}}"  title="{{photoMeta.title._content}}" />
+		<img ng-switch-default="medium" ng-src="{{photo.medium.source}}"  title="{{photoMeta.title._content}}" />
+	</div>
+	<div>	
+		Title: {{photoMeta.title._content}} <br />
+		Taken: {{photoMeta.dates.taken | dateFormat }}<br />
+		Owner: {{photoMeta.owner.username}}<br />
+		Location: {{photoMeta.owner.location}}<br />
+		Tags: <ul ng-repeat="tag in photoMeta.tags.tag" class="tags" >
+				<li class="tag-item" ng-click="lookupTags(tag._content)"> {{tag.raw}}</li>
+			  </ul>
+</div>
+</div>

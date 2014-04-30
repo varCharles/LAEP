@@ -1,0 +1,31 @@
+.sixteen.columns
+	.columns.eight.offset-by-four.search-col
+		form(ng-submit="search()")
+			input(type='text', name='artist-name', id='search',  ng-model='search_term', placeholder='What\'s your favorite band?')
+	.columns.ten.offset-by-two.search-col
+		p Type in an a band or select one of these popular artists below.
+		span.artist-link(ng-repeat='artist in top_artists.artist') 
+			a(href="#/artist/{{artist.name}}"){{artist.name}}
+	.results.columns.twelve.offset-by-two.add-bottom(ng-show='showResults')
+		h2 
+			| Top hit: 
+			a(href="#/artist/{{artist_search_result.artistmatches.artist[0].name}}" ) 
+				{{artist_search_result.artistmatches.artist[0].name}}
+		.main-card.clearfix.add-bottom
+			.columns.img.center
+				img(ng-src="{{artist_search_result.artistmatches.artist[0].image[4]['#text']}}")
+				
+			.top-albums.columns.add-bottom
+				h2 Top Albums
+				.album-card.columns.three.alpha.omega.center(ng-repeat="album in top_albums_result.album")
+					.img-shell
+						img(ng-src="{{album.image[2]['#text']}}")
+					a(href='#/album/{{artist_search_result.artistmatches.artist[0].name}}/{{album.name}}') {{album.name}}
+
+		row.artist-results.add-top
+			h3 Other results
+			.artist-card.columns.three.alpha.omega.center(ng-repeat="artist in artist_search_result.artistmatches.artist",ng-show="!$first")
+				.img-shell	
+					img(ng-src="{{artist.image[2]['#text']}}")
+				a.name(href="#/artist/{{artist.name}}"){{artist.name}}
+			

@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<title>Flickr Search</title>
+</head>
+<body ng-app>
+<div class="container" ng-controller="PhotoCtrl">
+<div>
+<input type="text" ng-model="imgFilter" />
+<span ng-click="setThumbSize('thumb')">Small</span>
+<span ng-click="setThumbSize('medium')">Medium</span>
+</div>
+	<li ng-repeat="photo in photos | filter:imgFilter | orderBy:sort_order" ng-switch="thumb_size">
+
+		<img ng-switch-when="thumb" ng-src="{{photo.url_t}}" />
+		<img ng-switch-when="medium" ng-src="{{photo.url_m}}" />
+		<p>{{photo.title}}</p>
+	</li>
+</div>
+
+  <script src="../components/angular/angular.js"></script>
+  <script src="scripts/flickr.js"></script>
+</body>
+</html>

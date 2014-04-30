@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular Flicker App</title>
+	<link rel="stylesheet" href="../../components/css/skeleton.css">
+	<link rel="stylesheet" href="../../components/css/app.css">
+</head>
+<body ng-app>
+<div class="container" ng-controller="PhotosCtrl">
+	<input type="text" ng-model="imgFilter" />
+	<ul class="photos">
+		<li ng-repeat="photo in photos | filter:imgFilter">
+			<img ng-src="{{photo.url_t}}" />
+			<p>{{photo.title}}</p>
+		</li>
+	</ul>	
+ </div>
+<script src="../../components/scripts/angular/angular.js"></script>
+<script src="scripts/controllers/photosController.js"></script>
+</body>
+</html>

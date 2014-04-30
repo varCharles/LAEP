@@ -1,0 +1,40 @@
+<html>
+<head>
+	<title>twitter</title>
+</head>
+<body>
+
+<h1>Twitter</h1>
+<div id="tweets-app">
+<input type="text" id="twit-search" />
+<input type="submit" id="search-init" />
+
+
+	<ul id="tweet-list"></ul>
+</div>	
+<!-- templates -->
+<script type="text/template" id="tweets-template">
+	<div class="tweet"> 
+		<img src="<%= profile_image_url %>" />
+		<h1><%= from_user_name %>
+		<a href="#/user/<%= from_user_id %>" class="from_user"> 
+		@<%= from_user %>
+		</a></h1>
+		<p><%= text %></p>
+	</div>
+</script>
+<!-- backbone -->
+<script src="components/jquery/jquery.js"></script>
+<script src="components/underscore/underscore.js"></script>
+<script src="components/backbone/backbone.js"></script>
+<script src="js/app.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+  <html class="no-js"> 
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+        <!-- build:css({.tmp,app}) styles/main.css -->
+        <link rel="stylesheet" href="bower_components/skeleton/stylesheets/base.css">
+        <link rel="stylesheet" href="bower_components/skeleton/stylesheets/skeleton.css">
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
+</head>
+  <body ng-app="lastfmApp">
+    
+    <div class="container">
+    <h1>last.fm</h1>    
+        <div ng-view=""></div>
+    </div>
+    
+    <script src="bower_components/angular/angular.js"></script>
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

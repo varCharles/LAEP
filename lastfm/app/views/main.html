@@ -1,0 +1,22 @@
+
+<div class="sixteen columns">
+  <h2>{{artist.name}}</h2>
+  <div class="main-card clearfix add-bottom">
+    <div class="columns img center"><img ng-src="{{artist.image[4]['#text']}}"/></div>
+    <div class="columns bio add-bottom">	
+      <div ng-bind-html-unsafe="artist.bio.summary"></div>
+    </div>
+    <div class="top-albums columns add-bottom">
+      <h2>Top Albums</h2>
+      <div ng-repeat="album in top_albums_result.album" class="album-card columns three alpha omega center">
+        <div class="img-shell">	<img ng-src="{{album.image[2]['#text']}}"/></div><a href="#/album/{{artist.name}}/{{album.name}}">{{album.name}}</a>
+      </div>
+    </div>
+  </div>
+  <row class="artist-results add-top">
+    <h3>Similar Artists</h3>
+    <div ng-repeat="artist in artist.similar.artist" ng-show="!$first" class="artist-card columns three alpha omega center">
+      <div class="img-shell">	<img ng-src="{{artist.image[2]['#text']}}"/></div><a href="#/artist/{{artist.name}}" class="name">{{artist.name}}</a>
+    </div>
+  </row>
+</div>

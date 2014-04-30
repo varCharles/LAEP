@@ -1,0 +1,3 @@
+function PhotosCtrl($scope) {
+
+}

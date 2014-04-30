@@ -1,0 +1,44 @@
+.menu{
+	position:fixed;
+	top:0;
+	left:0;
+	background:#333;
+	width:100%;
+	padding:12px 0;
+	z-index:100;
+}
+.menu input, .menu button{
+	font-size:24px;
+	color:#333;
+}
+
+.pagebody{
+	margin-top:70px;
+}
+ul.photos, ul.tags{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+ul.photos li img {
+	border:1px solid #ccc;
+	padding:5px;
+	margin-bottom:10px;
+}
+
+ul.tags li{
+	float:left;
+	margin-right:5px;
+	border-bottom:1px dotted #fff;
+	cursor:pointer;
+}
+ul.tags li:hover{
+	border-bottom:1px dotted #ccc;
+}
+ul.tags li:after{
+	content:"\002c" ;
+}
+ul.tags:last-of-type :after{
+	content:"";
+}

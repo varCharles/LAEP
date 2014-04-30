@@ -1,0 +1,13 @@
+.sixteen.columns
+	h2 {{album.name}} - {{album.artist}}
+	.main-card.clearfix.add-bottom 
+		.columns.img.center.add-bottom
+			img(ng-src="{{album.image[4]['#text']}}")
+		.columns.bio.add-bottom	
+			div(ng-bind-html-unsafe="album.wiki.summary")
+		.top-albums.columns.add-bottom
+			h2 Tracks
+			.track(ng-repeat="track in album.tracks.track")
+				.rank.columns.one.omega {{track['@attr'].rank}}, 
+				.columns.ten {{track.name}} 
+				.columns.one {{track.duration}}

@@ -1,0 +1,18 @@
+
+<div class="sixteen columns">
+  <h2>{{album.name}} - {{album.artist}}</h2>
+  <div class="main-card clearfix add-bottom"> 
+    <div class="columns img center add-bottom"><img ng-src="{{album.image[4]['#text']}}"/></div>
+    <div class="columns bio add-bottom">	
+      <div ng-bind-html-unsafe="album.wiki.summary"></div>
+    </div>
+    <div class="top-albums columns add-bottom">
+      <h2>Tracks</h2>
+      <div ng-repeat="track in album.tracks.track" class="track">
+        <div class="rank columns one omega">{{track['@attr'].rank}}, </div>
+        <div class="columns ten">{{track.name}} </div>
+        <div class="columns one">{{track.duration}}</div>
+      </div>
+    </div>
+  </div>
+</div>

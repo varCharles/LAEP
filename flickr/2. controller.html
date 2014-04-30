@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+<title>Flickr Search</title>
+</head>
+<body ng-app>
+<div class="container" ng-controller="MainCtrl">
+	<li ng-repeat="photo in photos">
+		<img ng-src="{{photo.url_t}}" />
+		<p>{{photo.title}}</p>
+	</li>
+ </div>
+  <script src="../components/angular/angular.js"></script>
+  <script src="scripts/flickr.js"></script>
+</body>
+</html>

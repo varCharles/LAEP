@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular Flicker App</title>
+	<link rel="stylesheet" href="../../components/css/skeleton.css">
+	<link rel="stylesheet" href="../../components/css/app.css">
+</head>
+<body ng-app>
+<div class="container" ng-controller="PhotosCtrl">
+	<span ng-click="setThumbSize('thumb')">Small</span>
+	<span ng-click="setThumbSize('medium')">Medium</span>
+	<ul class="photos">
+		<li ng-repeat="photo in photos" ng-switch="thumb_size">
+			<img ng-switch-when="thumb" ng-src="{{photo.url_sq}}" />
+			<img ng-switch-when="medium" ng-src="{{photo.url_m}}" />
+			<p>{{photo.title}}</p>
+		</li>
+	</ul>	
+ </div>
+<script src="../../components/scripts/angular/angular.js"></script>
+<script src="scripts/controllers/photosController.js"></script>
+</body>
+</html>

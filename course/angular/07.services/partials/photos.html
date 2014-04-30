@@ -1,0 +1,9 @@
+<span ng-click="setThumbSize('thumb')">Small</span>
+<span ng-click="setThumbSize('medium')">Medium</span>
+<ul class="photos">
+	<li ng-repeat="photo in photos" ng-switch="thumb_size">
+		<img ng-switch-when="thumb" ng-src="{{photo.url_sq}}" />
+		<img ng-switch-when="medium" ng-src="{{photo.url_m}}" />
+		<p>{{photo.title}}</p>
+	</li>
+</ul>	
